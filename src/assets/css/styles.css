@@ -1,0 +1,9 @@
+@import "tailwindcss/base";
+@import "tailwindcss/components";
+@import "tailwindcss/utilities";
+
+@import url('http://svgicons.sparkk.fr/svgicons.css');
+
+.cart-white path {
+    fill: #fff !important;
+}
