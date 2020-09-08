@@ -1,4 +1,16 @@
-# todo
+# FOODTRIP
+
+
+## Project Details
+
+Foodtrip is an online order app.
+
+## Tech
+
+-Vue 3 Beta
+-Tailwindcss
+-Typescript
+
 
 ## Project setup
 ```
