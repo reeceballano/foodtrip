@@ -1,28 +1,39 @@
 <template>
-  <div class="home">
-      <div class="container">
-        <div class="grid md:grid-cols-3">
-            <div class="md:col-span-1">
-                <h2>Filter</h2>
+    <div class="home">
+        <section class="section">
+            <div class="container">
+                <div class="grid md:grid-cols-3">
+                    <div class="md:col-span-1">
+                        {{ priceSetting }}
+                        {{ products }}
+                        <hr />
+                        {{ products }}
+                        <h2>Filter By Price</h2>
+                        <select name="" id="" v-model="priceSetting">
+                            <option value="low">Low</option>
+                            <option value="high">High</option>
+                        </select>
+                    </div>
+                    <div class="md:col-span-2">
+                        <div class="grid lg:grid-cols-2 xl:grid-cols-3 gap-12">
+                            <Product
+                                v-for="product in filteredProducts"
+                                :key="product.id"
+                                :product="product"
+                                @getproductid="getProductId"
+                            >
+                            </Product>
+                        </div> 
+                    </div>
+                </div>
             </div>
-            <div class="md:col-span-2">
-                <div class="grid lg:grid-cols-2 xl:grid-cols-3 gap-12">
-                    <Product
-                        v-for="product in products"
-                        :key="product.id"
-                        :product="product"
-                        @getproductid="getProductId"
-                    >
-                    </Product>
-                </div> 
-            </div>
-        </div>
-      </div>
-  </div>
+        </section>
+
+    </div>
 </template>
 
 <script lang="ts">
-import { defineComponent, reactive, toRefs } from 'vue';
+import { defineComponent, reactive, ref, toRefs, computed } from 'vue';
 import Product from '@/components/Product.vue';
 import { StateInterface, ProductInterface } from '@/types/product/';
 
@@ -80,15 +91,29 @@ export default defineComponent({
         const state = reactive<StateInterface>({
             newProduct: '2',
             products
-        });
+        })
 
         const getProductId = (id: number): void => {
             console.log('test' + id);
         }
 
+        const priceSetting = ref<string>('low');
+
+        const filteredProducts = computed( () => {
+            if(priceSetting.value == 'low') {
+                const sortedProd: ProductInterface[] = state.products.sort((a, b) => a.price - b.price);
+                return sortedProd;
+            } else {
+                const sortedProd: ProductInterface[] = state.products.sort((a, b) => b.price - a.price);
+                return sortedProd;
+            }
+        })
+
         return {
             ...toRefs(state),
-            getProductId
+            getProductId,
+            priceSetting,
+            filteredProducts,
         }
     }
 });

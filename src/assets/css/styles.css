@@ -4,6 +4,10 @@
 
 @import url('http://svgicons.sparkk.fr/svgicons.css');
 
+section {
+    @apply py-20
+}
+
 .cart-white path {
     fill: #fff !important;
 }
