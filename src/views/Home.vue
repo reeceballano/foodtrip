@@ -109,11 +109,16 @@ export default defineComponent({
             }
         })
 
+        const filterMaster = () => {
+            return 'filter master';
+        }
+
         return {
             ...toRefs(state),
             getProductId,
             priceSetting,
             filteredProducts,
+            filterMaster
         }
     }
 });
