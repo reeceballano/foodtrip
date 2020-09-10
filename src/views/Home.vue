@@ -110,7 +110,7 @@ export default defineComponent({
         })
 
         const filterFromBranch = () => {
-            return 'filtered';
+            return 'filtered from master';
         }
 
         return {
