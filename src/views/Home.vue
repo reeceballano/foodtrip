@@ -109,11 +109,16 @@ export default defineComponent({
             }
         })
 
+        const filterFromBranch = () => {
+            return 'filtered';
+        }
+
         return {
             ...toRefs(state),
             getProductId,
             priceSetting,
             filteredProducts,
+            filterFromBranch,
         }
     }
 });
