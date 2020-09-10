@@ -109,8 +109,8 @@ export default defineComponent({
             }
         })
 
-        const filterMaster = () => {
-            return 'filter master';
+        const filterFromBranch = () => {
+            return 'filtered';
         }
 
         return {
@@ -118,7 +118,7 @@ export default defineComponent({
             getProductId,
             priceSetting,
             filteredProducts,
-            filterMaster
+            filterFromBranch,
         }
     }
 });
