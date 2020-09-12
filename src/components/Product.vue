@@ -1,6 +1,7 @@
 <template>
     <div class="max-w-sm rounded overflow-hidden shadow-lg hover:shadow-xl">
         <img class="w-full" :src="productImage" :alt="product.name">
+        <h2>testing</h2>
         <div class="px-6 py-4">
             <div class="font-bold text-xl mb-2">{{ product.name }}</div>
             <p class="text-gray-700 text-base">
