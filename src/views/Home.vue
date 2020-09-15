@@ -1,13 +1,11 @@
 <template>
     <div class="home">
+        <app-hero></app-hero>
+
         <section class="section">
             <div class="container">
                 <div class="grid md:grid-cols-3">
                     <div class="md:col-span-1">
-                        {{ priceSetting }}
-                        {{ products }}
-                        <hr />
-                        {{ products }}
                         <h2>Filter By Price</h2>
                         <select name="" id="" v-model="priceSetting">
                             <option value="low">Low</option>
@@ -35,12 +33,14 @@
 <script lang="ts">
 import { defineComponent, reactive, ref, toRefs, computed } from 'vue';
 import Product from '@/components/Product.vue';
+import Hero from '@/components/Hero.vue';
 import { StateInterface, ProductInterface } from '@/types/product/';
 
 export default defineComponent({
     name: 'Home',
     components: {
         Product,
+        'app-hero': Hero
     },
 
     setup() {
