@@ -21,12 +21,12 @@
 
                     <div class="col-span-1">
                         <div class="relative border-b border-gray-800 pb-5">
-                            <div class="price border text-white inline-block p-2 mb-2">$12.69</div>
+                            <div class="price border text-white inline-block p-2 mb-2">${{ product.price }}</div>
                             <h2 class="text-5xl text-white leading-tight font-bold">
-                                Chicken Wings
+                                {{ product.name }}
                             </h2>
 
-                            <h4 class="text-white leading-10">6 Pcs Wings + Daily Dose Cold Brew Regular Latte</h4>
+                            <h4 class="text-white leading-10">{{ product.desc }}</h4>
                         </div>
 
                         <button class="bg-red-800 hover:bg-red-900 text-white font-bold py-2 px-4 inline-flex items-center mt-10 uppercase">
@@ -43,10 +43,17 @@
     </section>
 </template>
 
-<script>
-export default {
+<script lang="ts">
+import { defineComponent } from 'vue';
 
-}
+export default defineComponent({
+    props: {
+        product: {
+            type: Object,
+            required: true
+        }
+    }
+})
 </script>
 
 <style>

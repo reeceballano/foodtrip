@@ -1,6 +1,6 @@
 <template>
     <div class="home">
-        <app-hero></app-hero>
+        <app-hero :product="featuredProduct"></app-hero>
 
         <section class="section">
             <div class="container">
@@ -47,44 +47,35 @@ export default defineComponent({
         const products: ProductInterface[] = [
             {
                 id: 1,
-                name: 'Product 1',
-                price: 2,
-                image: 'prod-1.jpg'
+                name: 'Chicken Wings',
+                price: 12.69,
+                image: 'prod-1.jpg',
+                desc: '6 Pcs Wings + Daily Dose Cold Brew Regular Latte'
             },
 
             {
                 id: 2,
                 name: 'Product 2',
                 price: 2,
-                image: 'prod-2.jpg'
+                image: 'prod-2.jpg',
+                desc: '6 Pcs Wings + Daily Dose Cold Brew Regular Latte'
+
             },
 
             {
                 id: 3,
                 name: 'Product 3',
                 price: 3,
-                image: 'prod-1.jpg'
+                image: 'prod-1.jpg',
+                desc: '6 Pcs Wings + Daily Dose Cold Brew Regular Latte'
             },
 
             {
                 id: 4,
                 name: 'Product 4',
                 price: 4,
-                image: 'prod-2.jpg'
-            },
-
-            {
-                id: 5,
-                name: 'Product 5',
-                price: 5,
-                image: 'prod-1.jpg'
-            },
-
-            {
-                id: 6,
-                name: 'Product 6',
-                price: 4,
-                image: 'prod-2.jpg'
+                image: 'prod-2.jpg',
+                desc: '6 Pcs Wings + Daily Dose Cold Brew Regular Latte'
             }
         ];
         
@@ -109,6 +100,10 @@ export default defineComponent({
             }
         })
 
+        const featuredProduct = computed( () => {
+                return state.products.find(item => item.id == 1);
+        })
+
         const filterFromBranch = () => {
             return 'filtered from master';
         }
@@ -119,6 +114,7 @@ export default defineComponent({
             priceSetting,
             filteredProducts,
             filterFromBranch,
+            featuredProduct,
         }
     }
 });

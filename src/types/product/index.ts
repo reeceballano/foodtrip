@@ -3,6 +3,7 @@ export interface ProductInterface {
     name: string;
     price: number;
     image: string;
+    desc: string;
 }
 
 export interface StateInterface {
