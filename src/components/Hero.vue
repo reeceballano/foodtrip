@@ -16,7 +16,7 @@
 
                 <div class="hero-product md:grid grid-cols-2 md:h-full items-center gap-10 md:-ml-64">
                     <div class="cols-span-1">
-                        <img src="../assets/images/slides/chicken-wings.png" alt="" />
+                        <img :src="require(`../assets/images/products/${product.image}`)" alt="" />
                     </div>
 
                     <div class="col-span-1">

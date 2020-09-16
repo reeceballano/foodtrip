@@ -49,16 +49,16 @@ export default defineComponent({
                 id: 1,
                 name: 'Chicken Wings',
                 price: 12.69,
-                image: 'prod-1.jpg',
+                image: 'chicken-wings.png',
                 desc: '6 Pcs Wings + Daily Dose Cold Brew Regular Latte'
             },
 
             {
                 id: 2,
-                name: 'Product 2',
-                price: 2,
-                image: 'prod-2.jpg',
-                desc: '6 Pcs Wings + Daily Dose Cold Brew Regular Latte'
+                name: 'Sushi All Day',
+                price: 10.00,
+                image: 'sushi.png',
+                desc: '5 Pcs Sushi + Daily Dose Cold Brew Regular Latte'
 
             },
 
@@ -101,7 +101,7 @@ export default defineComponent({
         })
 
         const featuredProduct = computed( () => {
-                return state.products.find(item => item.id == 1);
+            return state.products.find(item => item.id == 2 );
         })
 
         const filterFromBranch = () => {
