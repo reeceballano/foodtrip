@@ -2,6 +2,16 @@
     <div class="home">
         <app-hero :product="featuredProduct"></app-hero>
 
+        <section class="section py-0">
+            <div class="grid md:grid-cols-3">
+                <app-service-item 
+                    v-for="service in services" 
+                    :key="service.id"
+                    :service="service">
+                </app-service-item>
+            </div>
+        </section>
+
         <section class="section">
             <div class="container">
                 <div class="grid md:grid-cols-3">
@@ -34,13 +44,16 @@
 import { defineComponent, reactive, ref, toRefs, computed } from 'vue';
 import Product from '@/components/Product.vue';
 import Hero from '@/components/Hero.vue';
+import ServiceItem from '@/components/ServiceItem.vue';
 import { StateInterface, ProductInterface } from '@/types/product/';
+import { ServiceInterface } from '@/types/service';
 
 export default defineComponent({
     name: 'Home',
     components: {
         Product,
-        'app-hero': Hero
+        'app-hero': Hero,
+        'app-service-item': ServiceItem
     },
 
     setup() {
@@ -90,6 +103,32 @@ export default defineComponent({
 
         const priceSetting = ref<string>('low');
 
+        const services = reactive<ServiceInterface[]>([
+            {
+                id: 1,
+                name: 'Select',
+                bg: 'bg-gray-100',
+                icon: '<svg width="24" height="24" xmlns="http://www.w3.org/2000/svg" fill-rule="evenodd" clip-rule="evenodd"><path d="M21.883 12l-7.527 6.235.644.765 9-7.521-9-7.479-.645.764 7.529 6.236h-21.884v1h21.883z"/></svg>',
+                color: 'text-gray-800'
+            },
+
+            {
+                id: 2,
+                name: 'Pay',
+                bg: ' bg-gray-800',
+                icon: '<svg width="24" fill="#fff" height="24" xmlns="http://www.w3.org/2000/svg" fill-rule="evenodd" clip-rule="evenodd"><path d="M21.883 12l-7.527 6.235.644.765 9-7.521-9-7.479-.645.764 7.529 6.236h-21.884v1h21.883z"/></svg>',
+                color: 'text-white'
+            },
+
+            {
+                id: 3,
+                name: 'Deliver',
+                bg: 'bg-gray-800',
+                icon: '<svg width="24" fill="#fff" height="24" xmlns="http://www.w3.org/2000/svg" fill-rule="evenodd" clip-rule="evenodd"><path d="M21.883 12l-7.527 6.235.644.765 9-7.521-9-7.479-.645.764 7.529 6.236h-21.884v1h21.883z"/></svg>',
+                color: 'text-white'
+            }
+        ]);
+
         const filteredProducts = computed( () => {
             if(priceSetting.value == 'low') {
                 const sortedProd: ProductInterface[] = state.products.sort((a, b) => a.price - b.price);
@@ -115,6 +154,7 @@ export default defineComponent({
             filteredProducts,
             filterFromBranch,
             featuredProduct,
+            services
         }
     }
 });

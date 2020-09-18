@@ -5,9 +5,47 @@
 @import url('http://svgicons.sparkk.fr/svgicons.css');
 
 section {
-    @apply py-20
+    @apply py-20;
 }
 
 .cart-white path {
     fill: #fff !important;
 }
+
+/**
+    PRODUCT ITEM
+*/
+
+.product-item {
+    @apply max-w-sm rounded overflow-hidden shadow-lg;
+}
+
+.product-item:hover {
+    @apply shadow-xl;
+}
+
+.product-price {
+    @apply block mb-6 border-b-2 pb-2 font-normal text-2xl;
+}
+
+.add-cart-btn {
+    @apply bg-red-600 text-white font-normal py-2 px-4 rounded inline-flex items-center justify-center;
+}
+
+.add-cart-btn:hover {
+    @apply bg-red-500;
+}
+
+/**
+    SERVICE ITEM
+*/
+
+.service-item {
+    @apply flex items-center gap-4 justify-center h-32;
+}
+
+.service-item h2 {
+    @apply text-sm font-bold uppercase;
+}
+
+

@@ -1,5 +1,5 @@
 <template>
-    <section id="hero" class="section  p-0">
+    <section id="hero" class="section p-0">
         <div class="grid md:grid-cols-3 md:h-screen">
             <div class="col-span-1 p-10">
                 <img src="../assets/images/logo.png" alt="logo" class="md:max-w-xs md:w-1/2" />
