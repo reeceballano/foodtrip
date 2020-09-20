@@ -1,5 +1,10 @@
 <template>
     <div class="home">
+        PRODUCT: STATE {{ storeProducts.product }} <br />
+        PRODUCTS: STATE 
+        <ul>
+            <li v-for="item in storeProducts.products" :key="item.id">{{ item.name }}</li>
+        </ul>
         <app-hero :product="featuredProduct"></app-hero>
 
         <section class="section py-0">
@@ -47,6 +52,7 @@ import Hero from '@/components/Hero.vue';
 import ServiceItem from '@/components/ServiceItem.vue';
 import { StateInterface, ProductInterface } from '@/types/product/';
 import { ServiceInterface } from '@/types/service';
+import { useStore } from 'vuex';
 
 export default defineComponent({
     name: 'Home',
@@ -143,6 +149,15 @@ export default defineComponent({
             return state.products.find(item => item.id == 2 );
         })
 
+        const store = useStore();
+
+        const storeProducts = computed( () => {
+            const p: ProductInterface[] = store.state.products;
+            return p;
+        })
+
+
+
         const filterFromBranch = () => {
             return 'filtered from master';
         }
@@ -154,7 +169,8 @@ export default defineComponent({
             filteredProducts,
             filterFromBranch,
             featuredProduct,
-            services
+            services,
+            storeProducts
         }
     }
 });
