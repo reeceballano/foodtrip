@@ -37,6 +37,10 @@
             </div>
         </section>
 
+        <section class="section content">
+            <h2>Content</h2>
+        </section>
+
     </div>
 </template>
 
