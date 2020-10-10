@@ -73,7 +73,7 @@ export default defineComponent({
 
             {
                 id: 2,
-                name: 'Sushi All Day',
+                name: 'Sushi All Day :)',
                 price: 10.00,
                 image: 'sushi.png',
                 desc: '5 Pcs Sushi + Daily Dose Cold Brew Regular Latte'
