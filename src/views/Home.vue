@@ -39,6 +39,7 @@
 
         <section class="section content">
             <h2>Content</h2>
+            <p>another new content</p>
         </section>
 
     </div>
