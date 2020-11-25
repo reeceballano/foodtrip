@@ -98,7 +98,7 @@ export default defineComponent({
         })
 
         const getProductId = (id: number): void => {
-            console.log('test' + id);
+            console.log('id: ' + id);
         }
 
         const priceSetting = ref<string>('low');
@@ -140,7 +140,7 @@ export default defineComponent({
         })
 
         const featuredProduct = computed( () => {
-            return state.products.find(item => item.id == 2 );
+            return state.products.find(item => item.id == 1 );
         })
 
         const filterFromBranch = () => {
