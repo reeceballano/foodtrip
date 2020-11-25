@@ -1,5 +1,9 @@
 {
+<<<<<<< HEAD
+  "name": "FoodTrip",
+=======
   "name": "foodtrip",
+>>>>>>> 73df1ebb5fd17410695e06db4d79f71989d76a7e
   "version": "0.1.0",
   "private": true,
   "scripts": {
