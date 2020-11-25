@@ -21,7 +21,7 @@
             <div class="container">
                 <div class="grid md:grid-cols-3">
                     <div class="md:col-span-1">
-                        <h2>Filter By Price</h2>
+                        <h2>Filter</h2>
                         <select name="" id="" v-model="priceSetting">
                             <option value="low">Low</option>
                             <option value="high">High</option>
