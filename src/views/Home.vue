@@ -1,10 +1,10 @@
 <template>
     <div class="home">
-        PRODUCT: STATE {{ storeProducts.product }} <br />
+        <!-- PRODUCT: STATE {{ storeProducts.product }} <br />
         PRODUCTS: STATE 
         <ul>
             <li v-for="item in storeProducts.products" :key="item.id">{{ item.name }}</li>
-        </ul>
+        </ul> -->
         <app-hero :product="featuredProduct"></app-hero>
 
         <section class="section py-0">
